@@ -1,17 +1,7 @@
-FROM node:lts-buster
-
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
-CMD ["npm", "start"]
+dev:
+  command: |
+    apt-get update
+    apt-get install -y libwebp libuuid-dev ffmpeg imagemagick wget git
+    npm install -g typescript pm2
+  sync:
+    - .:/app
