@@ -4,9 +4,9 @@ global.creator = 'Rizal Codder'// yourname
 global.MONGO_DB_URI = "mongodb+srv://rizalbot:Gamer999@rizalmods.10yiu9p.mongodb.net/?retryWrites=true&w=majority" //database mongodb 
 global.ACTIVATION_TOKEN_SECRET = "-@Pqnap+@/1jAPPnew/@10" //isi apa aja bebas
 global.your_email = "sibolangbolang529@gmail.com" //email
-global.email_password = "lnqmdoupnaclprpi" //application password email
+global.email_password = "ecewiarmtxbjckai" //application password email
 global.limitCount = 10000
-global.YUOR_PORT = 8000
+global.YUOR_PORT = 8080
 global.loghandler = {
 	noapikey:{
 		status: 403,
