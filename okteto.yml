@@ -7,10 +7,6 @@ deploy:
   commands:
     - npm install
     - npm run build
-  kubernetes:
-    image: my-image
-    replicas: 1
-    ports:
       - name: http
         containerPort: 8080
     resources:
@@ -20,8 +16,6 @@ deploy:
       requests:
         cpu: 250m
         memory: 256Mi
-  volumes:
-    - /data
 dev:
   api:
     command:
