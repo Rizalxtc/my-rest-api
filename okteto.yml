@@ -1,35 +1,16 @@
-build:
+version: "2"
+services:
   api:
-    context: ./api
-  frontend:
-    context: ./frontend
-deploy:
-  commands:
-    - npm install
-    - npm run build
-      - name: http
-        containerPort: 8080
-    resources:
-      limits:
-        cpu: 500m
-        memory: 512Mi
-      requests:
-        cpu: 250m
-        memory: 256Mi
-dev:
-  api:
-    command:
-      - npm
-      - run
-      - start
-    forward:
-      - 8080:8080
-    sync:
+    build: ./api
+    command: npm run start-dev
+    ports:
+      - "8080:8080"
+    volumes:
       - .:/usr/src/app
   frontend:
-    command:
-      - npm
-      - run
-      - start
-    sync:
+    build: ./frontend
+    command: npm run start
+    ports:
+      - "3000:3000"
+    volumes:
       - .:/usr/src/app
